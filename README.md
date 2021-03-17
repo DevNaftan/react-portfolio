@@ -1,1 +1,1 @@
-# JavaScript portfolio
+# JS Portfolio
