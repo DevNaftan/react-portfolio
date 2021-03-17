@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
@@ -10,7 +11,7 @@ module.exports = {
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: './js/[name].[contenthash].js',
+    filename: './[name].[contenthash].js',
   },
   mode: 'production',
   resolve: {
@@ -57,7 +58,15 @@ module.exports = {
       filename: './index.html',
     }),
     new MiniCssExtractPlugin({
-      filename: './assets/styles/[name].[contenthash].css',
+      filename: './[name].[contenthash].css',
+    }),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, 'public', 'favicon.ico'),
+          to: './',
+        },
+      ],
     }),
     new Dotenv(),
     new CleanWebpackPlugin(),
