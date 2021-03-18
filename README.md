@@ -1,6 +1,6 @@
 # JS Portfolio
 
-A minimal portfolio with Vanilla JavaScript
+A minimal portfolio with Vanilla JavaScript using Webpack.
 
 ### Run project
 
