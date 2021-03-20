@@ -7,25 +7,25 @@ module.exports = {
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    publicPath: '/js-portfolio/',
-    filename: 'js/[name].[contenthash].js',
-    assetModuleFilename: '[contenthash][ext][query]',
+    publicPath: '/',
+    filename: './js/[name].[contenthash].js',
+    assetModuleFilename: './[contenthash][ext][query]',
   },
   mode: 'development',
   devtool: 'source-map',
   resolve: {
-    extensions: ['.js'],
+    extensions: ['.js', '.jsx'],
     alias: {
-      '@utils': path.resolve(__dirname, 'src/utils/'),
-      '@templates': path.resolve(__dirname, 'src/templates/'),
-      '@styles': path.resolve(__dirname, 'src/styles/'),
-      '@images': path.resolve(__dirname, 'src/assets/images/'),
+      '@components': path.resolve(__dirname, './src/components/'),
+      '@hooks': path.resolve(__dirname, './src/hooks/'),
+      '@styles': path.resolve(__dirname, './src/styles/'),
+      '@images': path.resolve(__dirname, './src/assets/images/'),
     },
   },
   module: {
     rules: [
       {
-        test: /\.m?js$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
@@ -43,25 +43,25 @@ module.exports = {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
         generator: {
-          filename: 'assets/static/images/[contenthash][ext][query]',
+          filename: './assets/statics/images/[contenthash][ext][query]',
         },
       },
       {
         test: /\.(woff|woff2)$/i,
         type: 'asset/resource',
         generator: {
-          filename: 'assets/static/fonts/[contenthash][ext][query]',
+          filename: './assets/statics/fonts/[contenthash][ext][query]',
         },
       },
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'public/index.html',
-      filename: 'index.html',
+      template: './public/index.html',
+      filename: './index.html',
     }),
     new MiniCssExtractPlugin({
-      filename: 'assets/styles/[name].[contenthash].css',
+      filename: './css/[name].[contenthash].css',
     }),
     new Dotenv(),
   ],

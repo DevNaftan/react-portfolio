@@ -1,0 +1,7 @@
+main {
+  align-items: center;
+  display: grid;
+  grid-template-columns: minmax(auto, 1024px);
+  justify-content: center;
+  padding: 4em 0;
+}

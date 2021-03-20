@@ -1,11 +1,11 @@
-# JS Portfolio
+# React Portfolio
 
-A minimal portfolio with Vanilla JavaScript using Webpack.
+A minimal portfolio with React using Webpack.
 
 ### Run project
 
 ```
-cd js-portfolio
+cd react-portfolio
 npm i
 npm start
 ```
