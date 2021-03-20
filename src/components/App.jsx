@@ -10,8 +10,8 @@ const App = () => {
 
   return (
     <main>
-      {info.loading && <p>Loading...</p>}
-      {info.error && <p>{info.error}</p>}
+      {info.loading && <p className='state'>Loading...</p>}
+      {info.error && <p className='state state--error'>{info.error}</p>}
       {!info.loading && !info.error && <Card data={info.data} />}
     </main>
   );

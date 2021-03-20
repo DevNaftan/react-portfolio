@@ -5,3 +5,14 @@ main {
   justify-content: center;
   padding: 4em 0;
 }
+
+.state {
+  margin: 20px 0;
+  text-align: center;
+  font-size: 1.25em;
+  font-weight: 700;
+}
+
+.state--error {
+  color: rgb(255, 0, 0);
+}
